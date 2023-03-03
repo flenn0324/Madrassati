@@ -33,14 +33,27 @@
 
 @section('content')
     <div class="page-content read container-fluid">
+
+    <div class="row">
+        <div class="col-md-6">
+        <h3>Candidat : </h3>
+                <p><strong>Nom : </strong>{{ $dataTypeContent->candidature->Candidat->nom}}</p>
+                <p><strong>Prenom : </strong>{{ $dataTypeContent->candidature->Candidat->prenom}}</p>
+                <p><strong>Date de naissance : </strong>{{ $dataTypeContent->candidature->Candidat->ddn}}</p>
+                <p><strong>Telephone : </strong>{{ $dataTypeContent->candidature->Candidat->num}}</p>
+                <p><strong>Email : </strong>{{ $dataTypeContent->candidature->Candidat->email}}</p>
+                <p><strong>Adresse : </strong>{{ $dataTypeContent->candidature->Candidat->adresse}}</p>
+        </div>
+        <div class="col-md-6">
+                <h3>Candidature : </h3>
+                <p><strong>Numero : </strong>{{$dataTypeContent->candidature->id}}</p>
+                <p><strong>Etat : </strong>{{$dataTypeContent->candidature->etat}}</p>
+                <p><strong>Enregistrer le : </strong>{{$dataTypeContent->candidature->created_at}}</p>
+                <p><strong>Motif Refus : </strong>{{$dataTypeContent->candidature->motif_refus}}</p>
+        </div>
+    </div>
         <div class="row">
             <div class="col-md-12">
-
-                <div class="panel panel-bordered" style="padding-bottom:5px;">
-                <p>Candidature : </p>
-                <p>{{$dataTypeContent->candidature}}</p>
-                <p>Candidat : </p>
-                <p>{{$dataTypeContent->candidature->Candidat}}</p>
 
                     <!-- form start -->
                     @foreach($dataType->readRows as $row)

@@ -44,19 +44,39 @@
 
 @section('content')
 <div class="page-content read container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-6 col-sm-6">
+            <h3>formation</h3>
+            <p><strong>Titre : </strong>{{ $dataTypeContent->session->formation->nom}}</p>
+            <p><strong>Type : </strong>{{ $dataTypeContent->session->formation->type}}</p>
+            <p><strong>Niveau minimum : </strong>{{ $dataTypeContent->session->formation->niv_min}}</p>
+            <p><strong>Capacité : </strong>{{ $dataTypeContent->session->formation->capacite}}</p>
+            <h3>Session</h3>
+            <p><strong>Date debut : </strong>{{ $dataTypeContent->session->date_deb}}</p>
+            <p><strong>Date fin : </strong>{{ $dataTypeContent->session->date_fin}}</p>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <p>{{ $dataTypeContent->entretien}}</p>
+            <h3>information sur le Candidat</h3>
+            <p><strong>Nom : </strong>{{ $dataTypeContent->candidat->nom}}</p>
+            <p><strong>Prenom : </strong>{{ $dataTypeContent->candidat->prenom}}</p>
+            <p><strong>Date de naissance : </strong>{{ $dataTypeContent->candidat->ddn}}</p>
+            <p><strong>Telephone : </strong>{{ $dataTypeContent->candidat->num}}</p>
+            <p><strong>Email : </strong>{{ $dataTypeContent->candidat->email}}</p>
+            <p><strong>Adresse : </strong>{{ $dataTypeContent->candidat->adresse}}</p>
+            <h3>Cursus</h3>
+            <p><strong>Annee, Niveau et etablissement : </strong>{{ $dataTypeContent->candidat->cursus[0]->annee}} , {{ $dataTypeContent->candidat->cursus[0]->niveau}} , {{ $dataTypeContent->candidat->cursus[0]->etablissement}}</p>
+            <p><strong>Domaine : </strong>{{ $dataTypeContent->candidat->cursus[0]->domaine}}</p>
+            <p><strong>Moyenne Generale : </strong>{{ $dataTypeContent->candidat->cursus[0]->moyenne}}</p>
+            
+        </div>
+           
+    </div>
+
     <div class="row">
         <div class="col-md-12">
-
-            <p>{{ $dataTypeContent->entretien}}</p>
-            <p>candidat</p>
-            <p>{{ $dataTypeContent->candidat}}</p>
-            <p>Cursus</p>
-            <p>{{ $dataTypeContent->candidat->cursus}}</p>
-            <p>session</p>
-            <p>{{ $dataTypeContent->session}}</p>
-            <p>formation</p>
-            <p>{{ $dataTypeContent->session->formation}}</p>
-
 
             <div class="panel panel-bordered" style="padding-bottom:5px;">
                 <!-- form start -->

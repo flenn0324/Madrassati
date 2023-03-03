@@ -22,9 +22,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                        $i=0;
+                        @endphp
                         @foreach ($candidatures as $candidature)
+                        @php
+                        $i=$i+1;
+                        @endphp
                         <tr>
-                            <td scope="row" class="text-blue">Candidature n° 1</td>
+                            <td scope="row" class="text-blue">Candidature n° {{$i}}</td>
                             <td>{{\Carbon\Carbon::parse($candidature->created_at)->translatedFormat('d-m-Y')}}</td>
                             <td>{{$candidature->etat}}</td>
                             <td>{{$candidature->session->formation->nom}}</td>
